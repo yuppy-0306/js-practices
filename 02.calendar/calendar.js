@@ -10,6 +10,12 @@ function displayCalendar(year, month) {
   process.stdout.write('   '.repeat(firstDayOffset));
 
   
+  for (let date = firstDay; date <= lastDay; date.setDate(date.getDate() + 1)) {
+    process.stdout.write(String(date.getDate()).padStart(2, ' ') + ' ');
+    if (date.getDay() === 6) { // 土曜日（getDay()は6が土曜日）
+      console.log();
+    }
+  }
   console.log();
 }
 
