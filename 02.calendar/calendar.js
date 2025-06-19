@@ -12,11 +12,15 @@ function displayCalendar(year, month) {
   
   for (let date = firstDay; date <= lastDay; date.setDate(date.getDate() + 1)) {
     process.stdout.write(String(date.getDate()).padStart(2, ' ') + ' ');
-    if (date.getDay() === 6) { // 土曜日（getDay()は6が土曜日）
+    if (date.getDay() === 6) {
       console.log();
     }
   }
   console.log();
 }
+
+const args = process.argv.slice(2);
+let year = new Date().getFullYear();
+let month = new Date().getMonth() + 1;
 
 displayCalendar(year, month);
