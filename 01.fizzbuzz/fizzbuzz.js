@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 function fizzbuzz() {
   const lines = [];
   for (let i = 1; i <= 20; i++) {
