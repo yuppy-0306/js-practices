@@ -9,7 +9,6 @@ function displayCalendar(year, month) {
 
   const firstDayOffset = firstDay.getDay();
 
-  // eslint-disable-next-line no-undef
   process.stdout.write("   ".repeat(firstDayOffset));
 
   for (let date = firstDay; date <= lastDay; date.setDate(date.getDate() + 1)) {
@@ -22,7 +21,6 @@ function displayCalendar(year, month) {
   console.log();
 }
 
-// eslint-disable-next-line no-undef
 const args = process.argv.slice(2);
 let year = new Date().getFullYear();
 let month = new Date().getMonth() + 1;
