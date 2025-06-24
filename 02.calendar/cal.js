@@ -1,18 +1,21 @@
 #!/usr/bin/env node
 
 function displayCalendar(year, month) {
+  const monthNames = [
+    "", "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
   const firstDay = new Date(year, month - 1, 1);
   const lastDay = new Date(year, month, 0);
 
-  console.log(`       ${month}月 ${year}`);
-  console.log("日 月 火 水 木 金 土");
+  console.log(`     ${monthNames[month]} ${year}`);
+  console.log("Su Mo Tu We Th Fr Sa");
 
   const firstDayOffset = firstDay.getDay();
 
   process.stdout.write("   ".repeat(firstDayOffset));
 
   for (let date = firstDay; date <= lastDay; date.setDate(date.getDate() + 1)) {
-    // eslint-disable-next-line no-undef
     process.stdout.write(String(date.getDate()).padStart(2, " ") + " ");
     if (date.getDay() === 6) {
       console.log();
