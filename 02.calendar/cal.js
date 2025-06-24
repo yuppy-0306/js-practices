@@ -2,8 +2,19 @@
 
 function displayCalendar(year, month) {
   const monthNames = [
-    "", "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
+    "",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
   const firstDay = new Date(year, month - 1, 1);
   const lastDay = new Date(year, month, 0);
